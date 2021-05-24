@@ -1,0 +1,184 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.wrapper {
+  margin: 40px 30px;
+  min-height: 100vh; 
+  display: grid;
+  grid-template-columns: 15% 15% auto 15% 15%;
+  grid-template-areas: 
+    ". . title . ."
+    ". image_top image_top image_top ."
+    ". . first_part side side"
+    ". theory_of_inflation theory_of_inflation theory_of_inflation ."
+    ". . second_part . .";
+}
+
+header {
+  top: 0;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  border-bottom: solid 1px lightgrey;
+  background: white;
+}
+
+.left, .center, .right {
+  display: flex;
+  align-items: center;
+}
+
+.left > * {
+  padding: 20px;
+}
+
+button {
+  height: 30px;
+  margin-right: 5px;
+  background-color: rgb(86, 123, 149);
+  color: white;
+  border-radius: 5px;
+  border: solid 1px rgb(50, 104, 145)
+}
+
+.title {
+  grid-area: title;
+  margin: 20px;
+  padding: 15px;
+  font-size: 30px;
+  font-weight: 600;
+  font-style: italic;
+  border-bottom: solid 1px lightgrey;
+}
+.image_top {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 200px;
+  width: 100%;
+  grid-area: image_top;
+}
+
+.image_top img {
+  max-width: 100%;
+}
+
+.image_top p {
+  width: 80%;
+  color: grey;
+  font-size: 15px;
+  margin: 15px 0px;
+}
+
+.first_part {
+  grid-area: first_part;
+}
+.first_part p {
+  margin: 20px 0px;
+  font-size: 20px;
+}
+
+.side {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  grid-area: side;
+}
+.side h2 {
+  margin-bottom: 20px;
+  border-bottom: solid 1px lightgrey;
+  margin-left: 40px;
+  width: 80%;
+}
+.side div {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+}
+.side div img {
+  max-width: 25%;
+  margin: 20px 0;
+}
+
+.theory_of_inflation {
+  grid-area: theory_of_inflation;
+  position: relative;
+}
+
+.theory_of_inflation img {
+  max-width: 100%;
+  margin-bottom: 50px;
+}
+
+.grid-container {
+  position: absolute;
+  top: 180px;
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+.grid-container p {
+  font-size: 14px;
+}
+.top {
+  margin-bottom: 150px;
+}
+
+.second_part {
+  grid-area: second_part;
+}
+.second_part p {
+  margin: 20px;
+  font-size: 20px;
+}
+
+
